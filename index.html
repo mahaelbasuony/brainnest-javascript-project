@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Sissors Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <!--header-->
+      <header>
+        <main class="header">
+          <section class="header-container">
+            <nav class="nav">
+              <a href="/" class="logo_container"
+                ><img class="logo" src="./images/logo1.png"
+              /></a>
+              <ul class="nav-menu">
+                <li>
+                  <a href="#" class="nav-menu_item">About </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-menu_item">Contact </a>
+                </li>
+                <li>
+                  <a href="#" class="nav-menu_item">Login </a>
+                </li>
+              </ul>
+            </nav>
+          </section>
+        </main>
+      </header>
+    </div>
+    <section class="container">
+      <main class="result--container">
+        <section class="result--container__round">
+          <h3>Round:</h3><span class="round" id="round">0</span>
+        </section>
+        <section class="result--container__result">
+          <h3>You:</h3>
+          <span class="your__result" id="yourResult">0</span>
+          <h3>Computer:</h3>
+          <span class="computer__result" id="computerResult">0</span>
+        </section>
+      </main>
+      <img class="hero_img" src="./images/5.png" />
+      <main class="form">
+        <div class="contianer__form">
+          <input class="form__input" id="userData" type="text" />
+          <label class="form__label"
+            >Place write Rock or Paper or Scissors</label
+          >
+        </div>
+        <button class="result" id="result" onclick="showResult()">Check</button>
+      </main>
+    </section>
+    <footer>
+      <div class="footer">
+        <div class="footer_desc">
+          Copyright &copy; <span class="copyright">Maha Elbasuony</span>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
