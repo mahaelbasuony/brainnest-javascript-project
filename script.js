@@ -9,12 +9,13 @@ let dataObj = {
 function startGame() {
   if (dataObj.round < 5) {
     let getUserInput = prompt('Please write Rock or Paper or Scissors');
-    if (!['rock', 'paper', 'scissors'].includes(getUserInput)) {
+    let userInput= getUserInput.toLowerCase();
+    if (!['rock', 'paper', 'scissors'].includes(userInput)) {
       console.log('Please write Rock or Paper or Scissors');
       startGame();
     } else {
-      dataObj.user.push(getUserInput);
-      game(getUserInput);
+      dataObj.user.push(userInput);
+      game(userInput);
     }
   } else {
     if (dataObj.round == 5) {
