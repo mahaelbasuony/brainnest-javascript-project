@@ -1,8 +1,3 @@
-function computerPlay() {
-  let arr = ['Rock', 'Paper', 'Scissors'];
-  return arr[Math.floor(Math.random() * arr.length)].toLowerCase();
-}
-
 let dataObj = {
   round: 0,
   computerRate: 0,
@@ -10,36 +5,6 @@ let dataObj = {
   computer: [],
   user: [],
 };
-function playRound(playerSelection, computerSelection) {
-  dataObj.round += 1;
-  if (playerSelection === computerSelection)
-    return `Both players selected ${playerSelection}. It's a tie!`;
-  else if (playerSelection === 'rock') {
-    if (computerSelection === 'scissors') {
-      dataObj.userRate++;
-      return 'Rock beats scissors! You win!';
-    } else {
-      dataObj.computerRate++;
-      return 'Paper beats rock! You lose.';
-    }
-  } else if (playerSelection === 'paper') {
-    if (computerSelection === 'rock') {
-      dataObj.userRate++;
-      return 'Paper beats rock! You win!';
-    } else {
-      dataObj.computerRate++;
-      return 'Scissors beats paper! You lose.';
-    }
-  } else if (playerSelection === 'scissors') {
-    if (computerSelection === 'paper') {
-      dataObj.userRate++;
-      return 'Scissors beats paper! You win!';
-    } else {
-      dataObj.computerRate++;
-      return 'Rock beats scissors! You lose.';
-    }
-  }
-}
 
 function startGame() {
   if (dataObj.round < 5) {
@@ -71,3 +36,38 @@ function game(getUserInput) {
   startGame();
 }
 
+function computerPlay() {
+  let arr = ['Rock', 'Paper', 'Scissors'];
+  return arr[Math.floor(Math.random() * arr.length)].toLowerCase();
+}
+
+function playRound(playerSelection, computerSelection) {
+  dataObj.round += 1;
+  if (playerSelection === computerSelection)
+    return `Both players selected ${playerSelection}. It's a tie!`;
+  else if (playerSelection === 'rock') {
+    if (computerSelection === 'scissors') {
+      dataObj.userRate++;
+      return 'Rock beats scissors! You win!';
+    } else {
+      dataObj.computerRate++;
+      return 'Paper beats rock! You lose.';
+    }
+  } else if (playerSelection === 'paper') {
+    if (computerSelection === 'rock') {
+      dataObj.userRate++;
+      return 'Paper beats rock! You win!';
+    } else {
+      dataObj.computerRate++;
+      return 'Scissors beats paper! You lose.';
+    }
+  } else if (playerSelection === 'scissors') {
+    if (computerSelection === 'paper') {
+      dataObj.userRate++;
+      return 'Scissors beats paper! You win!';
+    } else {
+      dataObj.computerRate++;
+      return 'Rock beats scissors! You lose.';
+    }
+  }
+}
