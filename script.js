@@ -6,8 +6,8 @@ function computerPlay() {
 let dataObj = {
   round: 0,
   computerRate: 0,
-  computer: [],
   userRate: 0,
+  computer: [],
   user: [],
 };
 function playRound(playerSelection, computerSelection) {
