@@ -6,8 +6,10 @@ let dataObj = {
   user: [],
 };
 
+const maxRounds=5;
+
 function startGame() {
-  if (dataObj.round < 5) {
+  if (dataObj.round < maxRounds) {
     let getUserInput = prompt('Please write Rock or Paper or Scissors');
     let userInput= getUserInput.toLowerCase();
     if (!['rock', 'paper', 'scissors'].includes(userInput)) {
@@ -18,11 +20,11 @@ function startGame() {
       game(userInput);
     }
   } else {
-    if (dataObj.round == 5) {
+    if (dataObj.round == maxRounds) {
       if (dataObj.computerRate > dataObj.userRate)
-        console.log('Computer is the winner');
+        console.log('%c Computer is the winner','color:red');
       else if (dataObj.computerRate < dataObj.userRate)
-        console.log('You are the winner');
+        console.log('%c You are the winner','color:green');
       else console.log('There is no winner, play again');
     }
   }
