@@ -71,3 +71,48 @@ function game(getUserInput) {
   startGame();
 }
 
+
+//UI
+function showResult() {
+  if (dataObj.round < 5) {
+    let getUserInput = document.getElementById('userData').value.toLowerCase();
+    if (!['rock', 'paper', 'scissors'].includes(getUserInput)) {
+      alert('Please write Rock or Paper or Scissors');
+    } else {
+      dataObj.user.push(getUserInput);
+      gameUi();
+    }
+  } else {
+    if (dataObj.round == 5) {
+      document.getElementById('result').disabled = true;
+      if (dataObj.computerRate > dataObj.userRate)
+        alert('Computer is the winner');
+      else if (dataObj.computerRate < dataObj.userRate)
+        alert('You are the winner');
+      else alert('There is no winner, play again');
+    }
+  }
+}
+
+function gameUi() {
+  let getUserInput = document.getElementById('userData').value.toLowerCase();
+
+  document.getElementById('round').innerText = dataObj.round;
+  let computerRound = computerPlay();
+  dataObj.computer.push(computerRound);
+  console.log(dataObj);
+  alert(playRound(getUserInput, computerRound));
+  document.getElementById('yourResult').innerText = dataObj.userRate;
+  let userRoundSelectionElm = document.createElement('li');
+
+  userRoundSelectionElm.innerText = getUserInput;
+  document.getElementById('userSelections').append(userRoundSelectionElm);
+
+  document.getElementById('computerResult').innerText = dataObj.computerRate;
+
+  let computerRoundSelectionElm = document.createElement('li');
+  computerRoundSelectionElm.innerText = computerRound;
+  document
+    .getElementById('computerSelections')
+    .append(computerRoundSelectionElm);
+}
